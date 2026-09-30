@@ -1,0 +1,31 @@
+# Run from the repository root. Set dataset roots and checkpoint before training.
+seed: 42
+device: auto
+output: runs/remote_sensing_001
+tasks:
+  - datasets/landcoverai.yaml
+  - datasets/openearthmap.yaml
+  - datasets/seasonet.yaml
+model:
+  backend: sam
+  variant: vit_b
+  checkpoint: checkpoints/sam_vit_b_01ec64.pth
+  input_size: 1024
+  rank: 8
+  alpha: 8
+  last_blocks: 4
+training:
+  epochs: 30
+  batch_size: 2
+  workers: 0
+  learning_rate: 0.0001
+  amp: true
+router:
+  enabled: true
+  epochs: 10
+  beta: 16.5
+  quantile: 0.97
+evaluation:
+  visualizations: 12
+  boundary_ratio: 0.02
+  unknown_action: abstain

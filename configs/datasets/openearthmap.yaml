@@ -1,0 +1,15 @@
+# TEMPLATE: a CSV avoids repeated filename stems across regional directories.
+# CSV: id,image,mask,group (paths relative to root); group should identify region.
+name: openearthmap
+root: ${OPENEARTHMAP_ROOT}
+manifest: ${OPENEARTHMAP_MANIFEST}
+bands: [1, 2, 3]
+scale: 0.00392156862745098
+classes: [bareland, rangeland, developed_space, road, tree, water, agriculture, building]
+label_map: {1: 0, 2: 1, 3: 2, 4: 3, 5: 4, 6: 5, 7: 6, 8: 7}
+ignore_values: [0]
+tile_size: 512
+stride: 512
+split:
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+data_local/
+checkpoints/
+runs/
+*.pth
+*.pt
+.env
+verification/*.xml
+verification/dependencies.txt

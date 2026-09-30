@@ -1,0 +1,17 @@
+# TEMPLATE ONLY: confirm your SeasoNet edition's band order and label encoding.
+# Supply RGB-selected GeoTIFFs or a manifest of compatible imagery/masks.
+# Never interpret this illustrative 2-class map as SeasoNet's official ontology.
+name: seasonet
+root: ${SEASONET_ROOT}
+manifest: ${SEASONET_MANIFEST}
+bands: [1, 2, 3]
+scale: 0.0001
+classes: [YOUR_CLASS_0, YOUR_CLASS_1]
+label_map: {0: 0, 1: 1}
+ignore_values: [255]
+tile_size: 512
+stride: 512
+split:
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
+# group must identify geographic location across ALL seasonal observations.

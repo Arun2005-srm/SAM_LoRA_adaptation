@@ -1,0 +1,18 @@
+# Verify IDs against your downloaded edition. Inputs are full scenes or tiles.
+name: landcoverai
+root: ${LANDCOVERAI_ROOT}
+images: images/*.tif
+masks: masks/*.tif
+bands: [1, 2, 3]
+scale: 0.00392156862745098
+classes: [background, building, woodland, water, road]
+label_map: {0: 0, 1: 1, 2: 2, 3: 3, 4: 4}
+ignore_values: []
+tile_size: 512
+stride: 512
+augment: true
+split:
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
+# If supplying pre-cut patches, set group_regex or a manifest group column to
+# keep every patch from the same source location in a single split.

@@ -1,0 +1,15 @@
+name: custom
+root: ${CUSTOM_DATA_ROOT}
+images: images/*.png
+masks: masks/*.png
+mask_suffix: ""
+bands: [1, 2, 3]
+scale: 0.00392156862745098
+classes: [background, foreground]
+label_map: {0: 0, 255: 1}
+ignore_values: []
+tile_size: 512
+stride: 512
+split:
+  ratios: [0.70, 0.15, 0.15]
+  seed: 42
